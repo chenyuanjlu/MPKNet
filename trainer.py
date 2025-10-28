@@ -375,8 +375,7 @@ def run_training(config):
                   f"ACC={metrics['accuracy']:.4f}, "
                   f"F1={metrics['f1']:.4f}, "
                   f"Precision={metrics['precision']:.4f}, "
-                  f"Recall={metrics['recall']:.4f}, "
-                  f"Threshold={metrics['optimal_threshold']:.2f}")
+                  f"Recall={metrics['recall']:.4f}")
             
         # Log to TensorBoard
         writer.add_scalar("Loss/train", train_loss, epoch)
