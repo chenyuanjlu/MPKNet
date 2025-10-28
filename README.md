@@ -129,13 +129,8 @@ config = {
 Train separate models for each ligament:
 
 ```bash
-# 1. Edit config.py and set label_columns to ['ACL']
+# Edit config.py and run
 python run_training.py
-
-# 2. Change label_columns to ['PCL'] and run again
-python run_training.py
-
-# 3. Repeat for MCL and LCL
 ```
 
 Models will be saved in `experiments/training_YYYYMMDD_HHMMSS_LABEL/`
