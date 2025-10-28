@@ -1,0 +1,1 @@
+This directory stores inference results and visualizations.
