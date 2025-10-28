@@ -33,7 +33,7 @@ MPKNet is designed to classify four types of knee ligament injuries from MRI sca
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/MPKNet.git
+git clone https://github.com/chenyuanjlu/MPKNet.git
 cd MPKNet
 
 # Install dependencies
