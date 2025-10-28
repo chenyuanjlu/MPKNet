@@ -18,7 +18,6 @@ MPKNet is designed to classify four types of knee ligament injuries from MRI sca
 
 - 🔄 **Multi-Plane Support**: Utilizes multiple MRI planes (Sagittal, Coronal, Axial)
 - 🧬 **Multi-Modal Training**: Supports PDW and T1W sequences
-- 🎯 **Flexible Architecture**: Binary classification or multi-label classification
 - ⚖️ **Class Imbalance Handling**: Balanced sampling and adaptive thresholding
 - 🔍 **Model Interpretability**: Occlusion sensitivity heatmap generation
 - 🚀 **Ensemble Inference**: Combines multiple binary classifiers
