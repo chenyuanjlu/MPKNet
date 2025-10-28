@@ -124,7 +124,7 @@ config = {
 
 ### 2. Training
 
-#### Train Binary Classifiers (Recommended)
+#### Train Binary Classifiers
 
 Train separate models for each ligament:
 
@@ -139,18 +139,6 @@ python run_training.py
 ```
 
 Models will be saved in `experiments/training_YYYYMMDD_HHMMSS_LABEL/`
-
-#### Train Multi-Label Model
-
-Set multiple labels in config:
-```python
-'label_columns': ['ACL', 'PCL', 'MCL', 'LCL']
-```
-
-Then run:
-```bash
-python run_training.py
-```
 
 ### 3. Model Packing
 
