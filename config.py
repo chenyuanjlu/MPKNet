@@ -44,7 +44,7 @@ config = {
             'dropout': 0.5,
         },
         
-        # Comparison baseline model from: https://github.com/zqiuak/CoPAS
+        # Comparison baseline model from: https://github.com/zqiuak/CoPAS.git
         'copas': {
             'depth': 18,              # ResNet depth
             'use_co_attention': True, # Enable co-plane attention
