@@ -9,10 +9,10 @@ A deep learning framework for automated knee ligament injury classification from
 ## 📋 Overview
 
 MPKNet is designed to classify four types of knee ligament injuries from MRI scans:
-- **ACL** (Anterior Cruciate Ligament) - 前交叉韧带
-- **PCL** (Posterior Cruciate Ligament) - 后交叉韧带
-- **MCL** (Medial Collateral Ligament) - 内侧副韧带
-- **LCL** (Lateral Collateral Ligament) - 外侧副韧带
+- **ACL** (Anterior Cruciate Ligament)
+- **PCL** (Posterior Cruciate Ligament)
+- **MCL** (Medial Collateral Ligament)
+- **LCL** (Lateral Collateral Ligament)
 
 ### Key Features
 
