@@ -271,9 +271,9 @@ def run_training(config):
     print("=" * 60)
     print("Creating model...")
     
-    model_type = config['model'].get('model_type', 'DenseNet169')
+    model_type = config['model'].get('model_type', 'MultiPlaneDenseNet')
     
-    if model_type == 'DenseNet169':
+    if model_type == 'MultiPlaneDenseNet':
         if num_planes == 1:
             # Single plane: use original DenseNet169
             model = DenseNet169(
@@ -296,6 +296,49 @@ def run_training(config):
             
             print(f"Model: MultiPlaneDenseNet")
             
+    elif model_type == 'AnkleNet':
+        from network import AnkleNet
+        anklenet_config = config['model'].get('anklenet', {})
+        
+        model = AnkleNet(
+            spatial_dims=3,
+            in_channels=1,
+            out_channels=num_classes,
+            base_channels=anklenet_config.get('base_channels', 16),
+            dim=anklenet_config.get('dim', 128),
+            depth=anklenet_config.get('depth', 2),
+            heads=anklenet_config.get('heads', 4),
+            dropout=anklenet_config.get('dropout', 0.2),
+        ).to(device)
+        print(f"Model: AnkleNet")
+        
+    elif model_type == 'MRNet':
+        from network import MRNet
+        mrnet_config = config['model'].get('lightmrnet', {})
+        
+        model = MRNet(
+            spatial_dims=3,
+            in_channels=1,
+            out_channels=num_classes,
+            base_channels=mrnet_config.get('base_channels', 16),
+            dropout=mrnet_config.get('dropout', 0.5),
+        ).to(device)
+        print(f"Model: MRNet")
+        
+    elif model_type == 'CoPAS':
+        from network import CoPAS
+        copas_config = config['model'].get('copas', {})
+
+        model = CoPAS(
+            spatial_dims=3,
+            in_channels=1,
+            out_channels=num_classes,
+            depth=copas_config.get('depth', 18),
+            use_co_attention=copas_config.get('use_co_attention', True),
+            dropout=copas_config.get('dropout', 0.05),
+        ).to(device)
+        print(f"Model: CoPAS")
+
     else:
         raise ValueError(f"Unsupported model type: {model_type}")
     
