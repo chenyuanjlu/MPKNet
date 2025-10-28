@@ -218,91 +218,7 @@ This treats T1W images as independent training samples while validating only on 
 Choose augmentation intensity:
 
 ```python
-'data_augment': 'basic'  # Options: 'none', 'light', 'basic'
-```
-
-### Adaptive Thresholding
-
-The framework automatically finds optimal classification thresholds for each label during validation by maximizing F1 score. Thresholds are displayed in training logs:
-
-```
-PCL: AUC=0.7942, ACC=0.8092, F1=0.7500, Precision=0.7000, Recall=0.8000, Threshold=0.75
-```
-
-### Visualization Control
-
-Enable/disable specific visualizations:
-
-```python
-'visualization': {
-    'enable': True,  # Master switch
-    'roc_curves': True,
-    'confusion_matrices': True,
-    'prediction_distribution': True,
-}
-```
-
-## 📈 Example Results
-
-Validation metrics from trained models:
-
-```
-ACL: AUC=0.8839, ACC=0.8421, F1=0.8284, Precision=0.9091, Recall=0.7609, Threshold=0.55
-PCL: AUC=0.7942, ACC=0.8092, F1=0.7500, Precision=0.7000, Recall=0.8000, Threshold=0.75
-MCL: AUC=0.8199, ACC=0.7895, F1=0.7500, Precision=0.7333, Recall=0.7667, Threshold=0.60
-LCL: AUC=0.7975, ACC=0.8421, F1=0.7200, Precision=0.7500, Recall=0.6923, Threshold=0.70
-```
-
-## 🔧 Troubleshooting
-
-### CUDA Out of Memory
-```python
-# Reduce batch size
-'batch_size': 10  # instead of 20
-
-# Or reduce image size
-'spatial_size': (48, 48, 48)  # instead of (64, 64, 64)
-```
-
-### Class Imbalance Issues
-- Enable `use_balanced_sampling: True`
-- Use Focal Loss: `'loss_function': 'focal'`
-- Adjust pos_weight in BCE: `'pos_weight': 2.0`
-
-### Low Precision / High Recall
-- Framework automatically adjusts thresholds
-- Check optimal thresholds in training logs
-- Adjust if needed in inference with `--thresholds` argument
-
-### Model Not Learning
-- Check data distribution in printed statistics
-- Verify label format (0/1, not -1/1)
-- Increase learning rate or reduce weight decay
-- Disable balanced sampling if data is relatively balanced
-
-## 🖥️ System Requirements
-
-### Minimum
-- GPU: 8GB VRAM (e.g., RTX 2070)
-- RAM: 16GB
-- Storage: 50GB for data + models
-
-### Recommended
-- GPU: 16GB+ VRAM (e.g., RTX 3090, A100)
-- RAM: 32GB+
-- Storage: 200GB+ SSD
-
-## 📝 Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@software{mpknet2024,
-  title={MPKNet: Multi-Plane Knee Ligament Injury Classification Network},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/yourusername/MPKNet}
-}
+'data_augment': 'basic'
 ```
 
 ## 📄 License
@@ -315,17 +231,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - DenseNet architecture from [Huang et al., CVPR 2017](https://arxiv.org/abs/1608.06993)
 - PyTorch deep learning framework
 
-## 📧 Contact
-
-For questions or issues:
-- Open an issue on GitHub
-- Email: [your.email@example.com](mailto:your.email@example.com)
-
 ## ⚠️ Disclaimer
 
 This project is for **research purposes only** and should not be used for clinical diagnosis without proper validation and regulatory approval. Always consult qualified medical professionals for clinical decisions.
 
 ---
-
-**Star ⭐ this repository if you find it helpful!**
-
