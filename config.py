@@ -24,9 +24,33 @@ config = {
     },
     
     # ==================== Model Configuration ====================
-    'model': {
+     'model': {
+        'model_type': 'MultiPlaneDenseNet', #'CoPAS',  #'MRNet', #'AnkleNet', #'MultiPlaneDenseNet', 
         'fusion_type': 'concat',  # 'concat' | 'mean' | 'max'
         'shared_encoder': False,  # Share weights across planes
+        
+        # Comparison baseline model from: https://github.com/ChiariRay/AnkleNet.git
+        'anklenet': {
+            'base_channels': 16,
+            'dim': 128,
+            'depth': 2,
+            'heads': 4,
+            'dropout': 0.2,
+        },
+        
+        # Comparison baseline model from: https://github.com/MisaOgura/MRNet.git
+        'mrnet': {
+            'base_channels': 16,
+            'dropout': 0.5,
+        },
+        
+        # Comparison baseline model from: https://github.com/zqiuak/CoPAS
+        'copas': {
+            'depth': 18,              # ResNet depth
+            'use_co_attention': True, # Enable co-plane attention
+            'dropout': 0.05,
+        },
+        
     },
     
     # ==================== Training Configuration ====================
