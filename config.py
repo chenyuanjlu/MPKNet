@@ -7,8 +7,8 @@ Modify parameters here to control experiments.
 config = {
     # ==================== Data Configuration ====================
     'data': {
-        'images_dir': "/root/autodl-tmp/MPKNet/data",
-        'labels_csv': "/root/autodl-tmp/MPKNet/label.csv",
+        'images_dir': "./data",
+        'labels_csv': "./label.csv",
         
         # Modality augmentation: treat different modalities as separate samples
         'use_modality_augmentation': False,  # Enable multi-modality training
