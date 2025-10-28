@@ -172,16 +172,6 @@ Results will be saved to:
 - `./results/predictions.csv` - Classification results with probabilities
 - `./results/heatmaps/` - Occlusion sensitivity heatmaps (if enabled)
 
-### 5. Results Format
-
-Output CSV contains:
-
-```csv
-Patient_ID,ACL_Prediction,PCL_Prediction,MCL_Prediction,LCL_Prediction,ACL_Probability,PCL_Probability,MCL_Probability,LCL_Probability
-patient_001,1,0,1,0,0.8523,0.3241,0.7854,0.2156
-patient_002,0,1,0,0,0.2341,0.8954,0.1234,0.3456
-```
-
 ## 🎯 Advanced Usage
 
 ### Custom Loss Functions
